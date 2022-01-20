@@ -11,9 +11,8 @@ Seu objetivo é criar uma simples API que deve conter as seguintes funcionalidad
 
 | MÉTODO | URI         | AÇÃO                      |
 | ------ | ----------- | ------------------------- |
-| GET    | /doc      | Lista as URLs disponíveis para serem chamadas e uma breve explicação de cada   |
 | GET   | /info/{id}      | Obtém a quantidade de processamentos realizados utilizando aquele id            |
-| POST    | /interpretar/{id} | Processa o texto passado pelo objeto  |
+| POST    | /interpretar/{id} | Processa o texto passado pelo objeto no *body*  |
 
 
 
@@ -116,7 +115,7 @@ Seu objetivo é criar uma simples API que deve conter as seguintes funcionalidad
 
 - O Objetivo da atividade é:
 	- Utilizar o *keyPhrases* para identificar quais as frases mais importantes do texto.
-	- Extrair os períodos que contenham as frases mais importantes. (Lembre-se que período finaliza-se em um ponto final)
+	- Extrair os períodos que contenham as frases mais importantes. (Lembre-se que período finaliza-se em um ponto final, exclamação ou interrogação)
 	- Retorne um *array* com os principais períodos do texto recebido.
 	- Lembre-se de fazer um controle de quantas solicitações foram feitas por cada ID que chamou.
 	- Não há necessidade de fazer controle do tipo de id (ele pode ser qualquer string/interger)
@@ -131,11 +130,11 @@ Seu objetivo é criar uma simples API que deve conter as seguintes funcionalidad
 ```json
 [
     {
-        "sentence": "blablabla",
+        "sentence": "Esse será o primeiro contato com seu cliente, então, a primeira reunião com o possível comprador deve ser bem planejada!",
         "score": 0.99
     },
     {
-        "sentence": "bfasdfadsnnjfsdajkfsa",
+        "sentence": "Na sequência, apresente a solução para a demanda do comprador, que nesse caso é: a sua empresa!",
         "score": 0.85
     }
 ]
@@ -150,6 +149,7 @@ Você tem liberdade para escolher como calcular esse *score* para cada período 
 
 - Sua aplicação deverá rodar localmente.
 - Deverá ser utilizado alguma linguagem de programação de mercado (Dê preferencia a Node e/ou Python)
+- Descreva como você lidou com quaisquer ambiguidades na explicação.
 
 
 Qualquer dúvida: Envie um e-mail para paulo@buyco.com.br
