@@ -467,10 +467,42 @@ Seu objetivo é criar uma simples API que deve conter as seguintes funcionalidad
 }
 ```
 
-  - O Objetivo da atividade é:
+- O Objetivo da atividade é:
+	- Utilizar o *keyPhrases* para identificar quais as frases mais importantes do texto.
+	- Extrair os períodos que contenham as frases mais importantes. (Lembre-se que período finaliza-se em um ponto final)
+	- Retorne um *array* com os principais períodos do texto recebido.
+	- Lembre-se de fazer um controle de quantas solicitações foram feitas por cada ID que chamou.
+	- Não há necessidade de fazer controle do tipo de id (ele pode ser qualquer string/interger)
+	- Não há necessidade de haver persistencia nos dados, ou seja, a partir do momento que o programa finaliza ele nâo precisa permanecer com as informações salvas.
 
-    - Utilizar o *keyPhrases* para identificar quais as frases mais importantes do texto.
-    - Extrair os períodos que contenham as frases mais importantes. (Lembre-se que período finaliza-se em um ponto final)
-    - Retorne um *array* com os principais períodos do texto recebido.
-    - Lembre-se de fazer um controle de quantas solicitações foram feitas por cada ID que chamou.
-    - Não há necessidade de fazer controle do tipo de id (ele pode ser qualquer string/interger) e não há necessidade de haver persistencia nos dados, ou seja, a partir do momento que o programa finaliza ele nâo precisa permanecer com as informações salvas.
+
+
+#### O que seria um PLUS:
+
+- O retorno dos ararys possuir um grau de importância, por exemplo:
+
+```json
+[
+    {
+        "sentence": "blablabla",
+        "score": 0.99
+    },
+    {
+        "sentence": "bfasdfadsnnjfsdajkfsa",
+        "score": 0.85
+    }
+]
+```
+
+Você tem liberdade para escolher como calcular esse *score* para cada período encontrado.
+
+- Tratamento de erros
+- Testes unitários
+
+#### Requisitos não funcionais:
+
+- Sua aplicação deverá rodar localmente.
+- Deverá ser utilizado alguma linguagem de programação de mercado (Dê preferencia a Node e/ou Python)
+
+
+Qualquer dúvida: Envie um e-mail para paulo@buyco.com.br
